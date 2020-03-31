@@ -47,4 +47,17 @@ There are essentially 2 components required to make any one of your subnets clas
 ## **NAC rules for an our Node Sample APP DB - Private Subnet (Where does traffic come from? and where does it need to go?)**
 - The database servers can send and receive Internet traffic through the NAT device in the public subnet, it cannot receive traffic itself directly through its elastic IP address.
 -The instances in the private subnet can access the Internet by using a network address translation (NAT) gateway that resides in the public subnet. The database servers can connect to the Internet for software updates using the NAT gateway, but the Internet cannot establish connections to the database servers.
-- All traffic is routed through a single IP address.
+- All traffic has to go through the public subnet.
+
+NACs are stateless, meaning that you need to set both the inbound and outbound rules separately
+
+### APP
+- port 80 - This is the port the HTTP GET request comes in on, when the browser asks to display
+- port 443 - This port allows for HTTPS requests, requiring more security than a standard HTTP request that port 80 is used for.
+- port 22 - This port is used to accept the SSH key into the app to authorise admin access.
+- port 3000 - This port is generally used to run an app through NGINX or APACHE.
+- port 8080 - This port is most commonly used for access to a web server (such as AWS) as a non-root (or non-admin) user
+### DB
+- port 1433 - This is the port most commonly used to access an MSSQL database server through TCP/IP. It's assumed that DB is connecting to APP through this port.
+- port 22 - It's assumed that the DB is using port 22 to check the SSH access of a user.
+- port 27017 - Alternative to 1433, MongoDB uses port 27017 to communicate.
