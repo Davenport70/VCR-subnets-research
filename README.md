@@ -4,9 +4,10 @@
 - Amazon Virtual Private Cloud (Amazon VPC)
 - Amazon VPC is the networking layer for Amazon EC2.
 - Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define
+- In order to lock your instances down and secure them against attacks from the outside, you lock them within a VPC. The VPC restricts what sort of traffic, IP addresses and also the users that can access your instances.
 ## **What are subnets?**
 - A subnet is a range of IP addresses in your VPC.
-- Subnets are defined as all devices whose IP addresses have the same prefix. For example, all devices with IP addresses that start with 100.100.100. would be part of the same subnet. This would be class C. 
+- Subnets are defined as all devices whose IP addresses have the same prefix. For example, all devices with IP addresses that start with 100.100.100. would be part of the same subnet. This would be class C.
 - Dividing a network into subnets is useful for both security and performance reasons. IP networks are divided using a subnet mask.
 
 ## **What are private and public subnets?**
