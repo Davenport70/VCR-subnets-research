@@ -27,12 +27,12 @@ There are essentially 2 components required to make any one of your subnets clas
 ## What is NAC
 
 - NAC (Network Access Control)
-- (NAC) has the ability to restrict network access to devices and users that are authorized and authenticated.
+- (NAC) has the ability to restrict network access to devices and users that are authorised and authenticated.
 - Nac is largely about managing traffic.
 
 **What is NAC used for?**
 
-- Authorization, Authentication and Accounting (AAA) of network connections
+- Authorisation, Authentication and Accounting (AAA) of network connections
 - Role-based control for a user, device, or application post-authentication. This means that a given user and their device are placed into their corresponding permission buckets such that an employee in finance and an employee in HR have access to different resources in their environment.
 - Confidentiality and containment of intellectual property through policy enforcement.
 - Identity and asset management.
@@ -40,7 +40,7 @@ There are essentially 2 components required to make any one of your subnets clas
 
 ## **NAC rules for an our Node Sample APP - Public Subnet (Where do clients come in? port 80... You want to login to install stuff? port 22.. you need to communicate to db? )**
 
--The instances in the public subnet can send outbound traffic directly to the Internet.
+- The instances in the public subnet can send outbound traffic directly to the Internet.
 - A public subnet means traffic can enter through specific ports, this can give direct access to the app.
 - port 22 however is a more secure port and cannot be accessed directly by a user, however the server can access what is inside the database.
 
